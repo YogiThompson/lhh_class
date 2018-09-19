@@ -1,16 +1,21 @@
-let answer = 8;
+let answer = random(1, 10) ;
+let done = false
 
-while (true) {
-    let guess = prompt("Enter a number between 1 and 10");
+while (! done) {
+    let guess = prompt("Enter a number from 1-10");
 
+    if (guess > 10) {
+        alert("Invalid number");
+    break;
+    }
     if (guess < answer) {
-        alert("Too low!");
+        alert("Too low.");
     }
     else if (guess > answer) {
-        alert("Too high!");
+        alert("Too high.");
     }
     else {
-        alert("You got it!");
-        break;
+        alert("You win!!");
+        done = true;
     }
 }
