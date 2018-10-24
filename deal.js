@@ -1,63 +1,20 @@
 const columnCount = 7;
 function deal() {
+let c = 0
 
 
 
+    for (let row = 0; row < 7; row++) {
+        for (let col = row; col < 7; col++){
 
-    for (let r = 0; r < 7; r++) {
-        for (let i = r; i < 7; i++){
-
-            let card = this.cards[i];
-            card.reversed = true
-            this.columns[i].cards.push(card);
+            let card = this.cards[c];
+            c++ 
+            if (row == col){card.reversed = true} else(card.reversed = false)
+            this.columns[col].cards.push(card);
+            
         }
+    
+        
     }
-
-
-
-
-/*
-    for (let i = 1; i < 7; i++) {
-
-        let card = this.cards[i];
-        card.reversed = true
-        this.columns[i].cards.push(card);
-
-
-    }
-    for (let i = 2; i < 7; i++) {
-
-        let card = this.cards[i];
-        card.reversed = true
-        this.columns[i].cards.push(card);
-    }
-
-    for (let i = 3; i < 7; i++) {
-
-        let card = this.cards[i];
-        card.reversed = true
-        this.columns[i].cards.push(card);
-    }
-
-    for (let i = 4; i < 7; i++) {
-
-        let card = this.cards[i];
-        card.reversed = true
-        this.columns[i].cards.push(card);
-    }
-
-    for (let i = 5; i < 7; i++) {
-
-        let card = this.cards[i];
-        card.reversed = true
-        this.columns[i].cards.push(card);
-    }
-
-
-    for (let i = 6; i < 7; i++) {
-
-        let card = this.cards[i];
-        card.reversed = true
-        this.columns[i].cards.push(card);
-    }*/
+   
 }
