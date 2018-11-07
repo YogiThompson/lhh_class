@@ -9,12 +9,9 @@ let c = 0
 
             let card = this.cards[c];
             c++ 
-            if (row == col){card.reversed = true} else(card.reversed = false)
+            if (row == col){card.reversed = false} else(card.reversed = true)
             this.columns[col].cards.push(card);
             
-        }
-    
-        
+        }    
     }
-   
 }
