@@ -1,17 +1,28 @@
 function cardClicked(card, column, lastCard, lastColumn) {
-    card.reversed == false
-    if(lastCard == null){
+    if (card.reversed == true) {
+        card.reversed = false;
+        return;
+    }
+    
+    if (lastCard == null) {
         card.selected = true;
-    this.remember(card,column);
+        this.remember(card, column);
 
     }
     else {
 
-        let cardsToMove = lastColumn.popFrom(lastCard)
-column.append(cardsToMove)
-        lastCard.selected = false; 
-    this.forget();
-    
-    }
+        if ((card.color == lastCard.color) || (card.value != lastCard.value + 1)) {
+            lastCard.selected = false
+        }
+        else {
+            let cardsToMove = lastColumn.popFrom(lastCard)
+            column.append(cardsToMove)
+        }
 
+        lastCard.selected = false;
+        lastCard.reversed = false
+        this.forget();
+
+    }
+    
 }
